@@ -5,6 +5,7 @@ import {Nodes, Edges, VNetworkGraph} from "v-network-graph"
 import data from "./data"
 import { Graph }  from "./Graph"
 
+const currentYear = ref(new Date().getFullYear());
 
 const nodes: Nodes = reactive({ ...data.nodes });
 const edges: Edges = reactive({ ...data.edges });
@@ -125,7 +126,7 @@ const eventHandlers: vNG.EventHandlers = {
       </div>
       <!-- Copyright section -->
       <div class="p-6 text-center sm:text-center">
-        <span>© 2024 Copyright:</span>
+        <span>© {{ currentYear }} Copyright:</span>
         <a class="font-semibold" href="https://bytejutsu.com/">ByteJutsu</a>
       </div>
       <!-- Email -->
