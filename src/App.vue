@@ -3,19 +3,19 @@ import { reactive, ref } from "vue"
 import {Nodes, Edges, VNetworkGraph} from "v-network-graph"
 import data from "./data.ts"
 
-const nodes: Nodes = reactive({ ...data.nodes })
-const edges: Edges = reactive({ ...data.edges })
-const nextNodeIndex = ref(Object.keys(nodes).length + 1)
-const nextEdgeIndex = ref(Object.keys(edges).length + 1)
+const nodes: Nodes = reactive({ ...data.nodes });
+const edges: Edges = reactive({ ...data.edges });
+const nextNodeIndex = ref(Object.keys(nodes).length + 1);
+const nextEdgeIndex = ref(Object.keys(edges).length + 1);
 
-const selectedNodes = ref<string[]>([])
-const selectedEdges = ref<string[]>([])
+const selectedNodes = ref<string[]>([]);
+const selectedEdges = ref<string[]>([]);
 
 function addNode() {
-    const nodeId = `node${nextNodeIndex.value}`
-    const name = `N${nextNodeIndex.value}`
-    nodes[nodeId] = { name }
-    nextNodeIndex.value++
+    const nodeId = `node${nextNodeIndex.value}`;
+    const name = `N${nextNodeIndex.value}`;
+    nodes[nodeId] = { name };
+    nextNodeIndex.value++;
 }
 
 function removeNode() {
@@ -26,10 +26,10 @@ function removeNode() {
 
 function addEdge() {
     if (selectedNodes.value.length !== 2) return
-    const [source, target] = selectedNodes.value
-    const edgeId = `edge${nextEdgeIndex.value}`
-    edges[edgeId] = { source, target }
-    nextEdgeIndex.value++
+    const [source, target] = selectedNodes.value;
+    const edgeId = `edge${nextEdgeIndex.value}`;
+    edges[edgeId] = { source, target };
+    nextEdgeIndex.value++;
 }
 
 function removeEdge() {

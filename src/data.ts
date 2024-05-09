@@ -41,6 +41,15 @@ const configs = defineConfigs({
         normal: {
             width: 3,
         },
+        marker: {
+            target: { type: "arrow" },
+        },
+        selfLoop: {
+            radius: 14,
+            offset: 16,
+            angle: 180,
+            isClockwise: true,
+        },
     },
 })
 
